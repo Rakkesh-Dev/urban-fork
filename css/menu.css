@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --clr-base-background: #121212;
+    --clr-primary-accent: #cd7866; 
+    --clr-secondary-accent: #f6b162; 
+    --clr-neutral-text: #f2ecff;
+    --clr-support-text: #8b5160;
+    --clr-menu-heading-text:rgba(251, 251, 251, 0.911);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*===============Menu card for starters, main-course, beverages, desserts=======================*/
+/* Card Grid Layout */
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.5rem;
+    padding: 4rem 0.5rem;
+}
+
+/* Individual Card */
+.card-article{
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+/* Image */
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+    display: block;
+}
+
+/* Hover Zoom */
+.card-article:hover .card-img{
+    transform: scale(1.08);
+}
+
+/* Overlay text box */
+.card-data{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    text-align: center;
+    transition: bottom .35s ease-in-out;
+}
+
+/* reveal text on hover */
+.card-article:hover .card-data{
+    bottom: 0;
+}
+
+/* Title */
+.card-title{
+    margin: 0 0 .8rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* Button */
+.card-button{
+    padding: .6rem 1.4rem;
+    border: 1px solid #fff;
+    border-radius: .5rem;
+    font-size: .95rem;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Button hover */
+.card-button:hover{
+    background: #fff;
+    color: #000;
+}
+
+.menu-heading{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+
+}
+
+.menu-section {
+    padding-top: 120px; /* adjusts for navbar height */
+}
+
+
+/*=======================starters menu======================*/
+/* Section container */
+.menu-section {
+    margin-bottom: 60px; /* consistent spacing between sections */
+}
+
+/* Section heading (h2) */
+.category-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #121212;           /* change text to base charcoal for contrast */
+    background-color: wheat; /* primary accent background */
+    display: block;     /* shrink-wrap to text width */
+    padding-right:24px;
+    padding-left: 24px;
+    padding-top: 100px;        /* space around text */
+    padding-bottom: 100px;
+    border-radius: 5px;        /* rounded corners */
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-align: center;
+    /* overflow: hidden; */
+}
+
+/* Grid container for cards */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* two columns */
+    gap: 30px; /* spacing between cards */
+}
+
+/* Individual card: image + info */
+.menu-card {
+    display: flex;            /* side-by-side layout */
+    gap: 20px;                /* space between image and info */
+    align-items: center;
+    background-color: #121212; /* optional: charcoal black background for contrast */
+    padding: 16px;
+    border-radius: 12px;
+}
+
+/* Dish image */
+.menu-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Dish info wrapper */
+.menu-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Dish name (h3) */
+.menu-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;           /* between 24–28px */
+    line-height: 1.3;
+    font-weight: 600;           /* semi-bold */
+    color: #f6b162;             /* secondary accent for name */
+    margin: 0 0 6px;
+}
+
+/* Dish description */
+.menu-info p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;            /* as per guide */
+    line-height: 1.5;
+    color: #f2ecff;             /* neutral text */
+    opacity: 0.85;
+    margin: 0;
+}
+
+@media(max-width: 1024px) {
+    .card-container { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .menu-grid { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 600px) {
+    .card-container { grid-template-columns: 1fr; gap: 1.5rem; }
+    .menu-info h3 { font-size: 20px; }
+    .menu-info p { font-size: 14px; }
+}

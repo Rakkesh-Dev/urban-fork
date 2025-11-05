@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --clr-base-background: #121212;
+    --clr-primary-accent: #cd7866; 
+    --clr-secondary-accent: #f6b162; 
+    --clr-neutral-text: #f2ecff;
+    --clr-support-text: #8b5160;
+    --clr-menu-heading-text:rgba(251, 251, 251, 0.911);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 0;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;   /* centers the block */
+    padding: 40px 0;
+}
+
+.contact-section h1, .contact-section p {
+    text-align: center;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+.contact-form {
+    background: var(--clr-base-background);
+    border: 1px solid var(--clr-primary-accent);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+button {
+    background: #cd7866;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media(max-width: 1024px) {
+    .blog-container { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media(max-width: 600px) {
+    .blog-container { padding: 20px; }
+}
